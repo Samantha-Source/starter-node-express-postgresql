@@ -1,15 +1,17 @@
-// Update with your config settings.
+const path = require("path");
+require ("dotenv").config();
+const { DATABSE_URL } = process.env;
 
-/**
- * @type { Object.<string, import("knex").Knex.Config> }
- */
+// /**
+//  * @type { Object.<string, import("knex").Knex.Config> }
+//  */
 module.exports = {
 
   development: {
     client: 'postgresql',
-    connection: "",
+    connection: DATABSE_URL,
+    migrations: {
+      directory: path.join(__dirname, "src", "db", "migrations"),
+    },
   },
-
-
-
 };
