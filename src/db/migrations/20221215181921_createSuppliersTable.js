@@ -1,4 +1,8 @@
+
+// export function up which takes in the knex connection
 exports.up = function (knex) {
+  //create table called "suppliers"
+  //create table takes in 2 paramertes, what you want to call the table and function(all the things you want about that table)
   return knex.schema.createTable("suppliers", (table) => {
     table.increments("supplier_id").primary();
     table.string("supplier_name");
